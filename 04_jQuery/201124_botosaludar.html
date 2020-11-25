@@ -1,0 +1,38 @@
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <input type="button" value="Crear" id="crear">
+    <input type="button" value="Saludar" class="boto_saludar">
+        
+    <script language="javascript">
+    
+        $(function(){
+
+            $(document).on("click", ".boto_saludar", function(){
+                alert("Hola")
+            })
+            // $(".boto_saludar").click(function(){
+            //     alert("HOLA ")
+            // });
+
+            $("#crear").click(function(){
+                var body = $("body");
+                body.append("<input type='button' value='Saludar' class='boto_saludar'>")
+            });
+
+        });
+            
+    </script>
+</body>
+</html>

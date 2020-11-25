@@ -1,0 +1,45 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+        <!-- Jquery -->
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <label for="nom">NOM:</label>
+        <input type="text" name="nom" id="nom"> <br>
+
+        <label for="cognoms">COGNOMS:</label>
+        <input type="text" name="cognoms" id="cognoms"> <br>
+
+        <label for="edat">EDAT:</label>
+        <input type="text" name="edat" id="edat"> <br>
+
+        <label for="poblacio">POBLACIÓ</label>
+        <input type="text" name="poblacio" id="poblacio"> <br>
+    
+        <input type="button" value="COMPROVAR" id="boto_comprovar">
+    
+    
+        <script language="javascript">
+    
+            $(function(){
+                $("input[type=text]").css("background-color", "#ffffcc");
+                $("input[type=text]").focus(function(){
+                    // $("input[type=text]").css("background-color", "#ffffcc")
+                    $(this).css("background-color", "red")
+                })
+                $("input[type=text]").blur(function(){
+                    $(this).css("background-color", "#ffffcc")
+                })
+            });
+                
+    
+    
+            
+        </script>
+    </body>
+    </html>

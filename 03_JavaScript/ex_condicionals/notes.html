@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script >
+
+
+        function comprovar(){
+            var nota = document.getElementById("nota");
+
+            //Condicionals: 
+            if(nota.value>=85){
+                alert("Excel·lent")
+            }
+            else{
+                if(nota.value>=70){
+                    alert("Notable")
+                }
+                else{
+                    if(nota.value >= 60){
+                        alert("Bé")
+                    }
+                    else{
+                        if(nota.value >= 50){
+                            alert("Suficient")
+                        }
+                        else{
+                            if(nota.value >= 25){
+                                alert("Insuficient")
+                            }
+                            else{
+                                alert("Molt deficient")
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        function comprovar2(){
+                var nota = document.getElementById("nota");
+
+                if(nota.value >= 85){alert("Excel·lent")}
+                else if(nota.value >= 70){alert("Notable")}
+                else if(nota.value >= 60){alert("Bé")}
+                else if(nota.value >= 50){alert("Suficient")}
+                else if(nota.value >= 25){alert("Insuficient")}
+                else{alert("Molt deficient")}
+            }
+    </script>
+</head>
+<body>
+    <label for="nota">Nota:</label>
+    <input type="number" name="nota" id="nota">
+    <input type="button" value="COMPROVAR" onclick="comprovar()">
+
+    <input type="button" value="COMPROVAR2" onclick="comprovar2()">
+
+</body>
+</html>

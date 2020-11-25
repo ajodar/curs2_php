@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        p{
+            color: red;
+        }
+
+        /* Tots els p que estan dins el div */
+        div p{
+            color: blue;
+        }
+
+        /* tots els p que siguin descendents directes del div - FIlls directes */
+        div > p{
+            color: violet;
+        }
+
+        /* siblings: germans; al mateix nivell */
+        h2 ~ p{
+            font-weight: bold;
+        }
+
+        /* L'adjacent: el germà que està seguidament */
+        h2 + p{
+            color:green
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Combinatoria de selectors </h1>
+        <h2>Nivell avançat</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, error suscipit modi nihil consequatur minus laborum molestiae quos reiciendis, nostrum voluptatum inventore ullam, possimus eos quia velit blanditiis beatae harum?
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo error saepe iure ducimus maxime libero illum sapiente fugit deserunt non totam fuga officia, obcaecati aliquam a, odit adipisci, rem inventore!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellat possimus adipisci, harum veniam, distinctio praesentium voluptatibus nostrum, explicabo perferendis corporis dolorem officia fugiat mollitia molestias eveniet? Temporibus, repellat eius.
+        </p>
+
+        <h2>Informació bàsica</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, error suscipit modi nihil consequatur minus laborum molestiae quos reiciendis, nostrum voluptatum inventore ullam, possimus eos quia velit blanditiis beatae harum?
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo error saepe iure ducimus maxime libero illum sapiente fugit deserunt non totam fuga officia, obcaecati aliquam a, odit adipisci, rem inventore!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellat possimus adipisci, harum veniam, distinctio praesentium voluptatibus nostrum, explicabo perferendis corporis dolorem officia fugiat mollitia molestias eveniet? Temporibus, repellat eius.
+        </p>
+
+        <h2>Informació extra</h2>
+        <section>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum tenetur ipsam illum delectus, exercitationem rerum dolores aliquid fuga quos minima, odit inventore, ullam repellat explicabo porro nihil maiores odio voluptas.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, architecto quasi et dicta quibusdam accusamus eaque! Ipsam id, molestiae autem voluptas beatae voluptatum sapiente iusto fugiat nisi saepe laudantium doloremque.
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, cumque illo repellendus fugiat provident laborum ea rerum omnis delectus magnam. Inventore ipsum harum autem ratione optio, fuga placeat ipsam nulla?
+            </p>
+        
+        </section>
+
+    </div>
+
+</body>
+</html>

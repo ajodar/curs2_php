@@ -1,0 +1,207 @@
+
+<html lang="en">
+    <head>
+        <meta name="title" content="Exercici d'HTML (taules, enllaços, llistes i formularis">
+        <meta name="author" content="Anna Jòdar Portas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercici CSS - MIG | Anna Jòdar</title>
+    
+        <style type="text/css">
+
+
+            body{
+                margin: 0px;
+                background-color: rgb(253, 219, 225);
+                background-image: url(fons.jpg);
+                background-repeat: repeat-x;
+                background-size: 50px;
+                background-position: bottom;
+
+            }
+
+            #container{
+                background-color: white;
+                width: 80%;
+                margin: 10px auto ;
+                padding: 10px; 
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #capa_logo{
+                text-align: center;
+            }
+
+
+            b, i{ 
+                font-size: 25px;
+                text-decoration: underline;
+            }
+
+            h1, h2{
+                color: rgb(247, 82, 109);
+                font-family: 'Times New Roman', Times, serif;
+
+            }
+
+            table{
+                text-align: center;
+            }
+
+            form{
+                font-weight: bold;
+                line-height: 140%;
+            }
+
+            label + input{
+                background-color: rgb(253, 219, 225);
+                border: 1px solid rgb(207, 204, 204);
+            }
+
+            #linia_dalt{
+                border: 1px dashed;
+                color: rgb(253, 219, 225);
+                margin: -5px;
+            }
+
+            .footer{
+                text-align: center;
+            }
+
+            #linia_sota{
+                border: 5px solid;
+                color: rgb(247, 82, 109);
+                margin: -10px;
+            }
+
+
+            .container_img{
+                
+                background-repeat: repeat-y;
+                
+            }
+
+            /* Capa projects */
+
+            #capa_projects{
+                background-color: rgb(253, 219, 225);
+                width: 200px;
+                padding: 0px 5px;
+                line-height: 200%;
+                font-weight: bold;
+                position: relative;
+                float: right;
+                margin: 5px;
+                border: 1px solid rgb(247, 82, 109);
+            }
+
+            
+            
+
+        </style>
+    
+    </head>
+    <body>
+        <div id="container">
+            <!-- Imatge -->
+            <div id="capa_logo">
+                <img src="logo.png" alt="Logotip Girl Develop It" height="80">
+            </div>
+            
+        
+            <!--APARTAT 1: About -->
+            <h1>About</h1>
+            <p>It can be intimidating for women to learn and ask questions when they are in an <b>extreme minority</b>. While open and welcoming, today's budding developer community is up to <b> 91% male</b>. If we can empower ore famales with the confidence in their technological capabilites <i>we can begin to change this landscape.</i> </p>
+        
+            <!-- APARTAT 2: Our locations -->
+            <div id="capa_projects">
+                <h2>Projects</h2>
+                <ul>
+                    <li>USA
+                        <ul>
+                            <li><a href="https://en.wikipedia.org/wiki/New_York_City" target="_blank">New York</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Columbus,_Ohio">Columbus</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Austin,_Texas" target="_blank">Austin</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Philadelphia" target="_blank">Philly</a></li>
+                        </ul>
+                    </li>
+                    <li>World
+                        <ul>
+                            <li><a href="https://en.wikipedia.org/wiki/Ottawa" target="_blank">Ottawa</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Sydney" target="_blank">Sydney</a></li>
+                        </ul>
+            
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- APARTAT 3: Upcoming classes -->
+            <h2>Upcoming Classes</h2>
+            <table border="1">
+                <tr>
+                    <th>Location</th>
+                    <th>Topic</th>
+                </tr>
+                <tr>
+                    <td>New York</td>
+                    <td>JavaScript & jQuery</td>
+                </tr>
+                <tr>
+                    <td>New York</td>
+                    <td>HTML & CSS</td>
+                </tr>
+            </table>
+            
+            <!-- APARTAT 4: SignUp! -->
+            
+            <h2>Sign Up!</h2>
+            <form action="text/plain" method="get">
+                <label for="text_name">Name:</label>
+                <input type="text" name="name" id="text_name" size="13">
+        
+                <br>
+        
+                <label for="text_email">Email:</label>
+                <input type="text" name="email" id="text_email" size="13">
+        
+                <br>
+        
+                <label for="escull_location">Location:</label>
+                <select name="location" id="escull_location">
+                    <option value="SanFrancisco">San Francisco</option>
+                    <option value="NewYork">New York</option>
+                </select>
+        
+                <br>
+        
+                <fieldset>
+                    <legend>Gender</legend>
+        
+                    <label for="camp_female">Female</label>
+                    <input type="radio" name="gender" id="camp_female" value="female">
+                    
+                    <label for="camp_male">Male</label>
+                    <input type="radio" name="gender" id="camp_male" value="male">
+                </fieldset>
+        
+                <br>
+        
+                <label for="text_experience">Experience:</label> <br>
+                <textarea name="experience" id="text_experience"></textarea>
+        
+                <br><br>
+        
+                <input type="submit" value="Sign Up">
+            </form>
+            <hr id="linia_dalt">
+            <p class="footer">
+                <a target="_blank" href="https://twitter.com/" >Twitter</a> | <a target="_blank" href="https://www.facebook.com/">Facebook</a> | <a target="_blank" href="https://www.flickr.com/">Flickr</a>
+        
+            </p>
+            <hr id="linia_sota">
+
+        </div>
+
+    
+    </body>
+    </html>

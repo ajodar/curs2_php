@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #flor{
+            width: 400px;
+        }
+    </style>
+
+    <script language="javascript">
+        function canviarColor(colorlletra){
+            var titol = document.getElementById("titol");
+            var contingut = document.getElementById("contingut");
+            titol.style.color = colorlletra;
+            contingut.style.color = colorlletra;
+
+            if(colorlletra == "red"){
+                flor.src = "imatges/flor_vermella.jpg";
+            }
+            else if(colorlletra == "black"){
+                flor.src = "imatges/flor_blanca.jpg"
+            }
+            else{
+                flor.src = "imatges/flor_blava.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="titol">Canviar aspectes elements JS</h1>
+
+    <p id="contingut">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates doloremque voluptatum quidem atque! Pariatur earum distinctio libero hic neque at quia quam repudiandae iusto ipsam iure officiis, fugiat ab similique.</p>
+
+    <img src="imatges/flor_blanca.jpg" alt="" id="flor"> <br>
+
+    <input type="button" value="VERMELL" onclick="canviarColor('red')">
+    <input type="button" value="BLAU" onclick="canviarColor('blue')">
+    <input type="button" value="RESTABLIR " onclick="canviarColor('black')">
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <!-- Jquery -->
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+        <style>
+            .check_container{
+                text-align: center;
+            }
+            #select_totes{
+                font-size: 10px;
+            }
+            .marcat{
+                background-color: #ddfac0;
+            }
+            tbody img{
+                width: 20px;
+            }
+            h2{
+                font-size: 20px;
+            }
+            .capa_quantitat{
+                text-align: center;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <!-- Títol -->
+            <div class="row">
+                <div class="col">
+                    <h1>COMANDA jQuery</h1>
+                    <h2>Afegeix els productes al carro</h2>
+                    <select name="prod" id="choose_prod">
+                        <option value="0">Macarrons</option>
+                        <option value="1">Spaguettis</option>
+                        <option value="2">Amanida</option>
+                    </select>
+                    <input type="button" value="Afegeix producte" id="boto_afegir">
+                </div>
+            </div>
+            <br>
+            <h2>Resum de la comanda</h2>
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th id="select_totes">Selecciona totes <br> <input type="checkbox" name="check_tots" id="check_tots"></th>
+                        <th>Producte</th>
+                        <th>Quantitat</th>
+                        <th>Preu</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="files_prod">
+                    <!-- Primera fila -->
+                    <tr>
+                        <td class="check_container"><input type="checkbox" class="check_boto" name="prod1"  id="prod1"></td>
+                        <td>Producte 1</td>
+                        <td class="capa_quantitat">
+                            <img src="up.png" alt="" class="up"><br>
+                            <span class="quantitat">1</span> <br>
+                            <img src="down.png" alt="" class="down">
+                        </td>
+                        <td><span class="preu">5</span>€</td>
+                        <td><span class="preu_total"></span></td>
+                    </tr>
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">TOTAL</th>
+                        <th>Q*preu*prod</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+
+        <script language="JavaScript">
+
+            $(function(){
+
+                //Informació dels productes: 
+
+                productes = ["Macarrons", "Spaguettis", "Amanida"];
+                preu = ["8", "10", "12"];
+                productes_afegits = []; 
+                
+
+                //BOTO AFEGIR
+                $("#boto_afegir").click(function(){
+                    var prod_seleccionat = $("#choose_prod").val();
+
+                    //Crea row amb informació del producte
+                    $("#files_prod").append(
+                        "<tr>"+
+                        "<td class='check_container'><input type='checkbox' class='check_boto' name='prod1'  id='prod1'></td>"+
+                        "<td>"+ productes[prod_seleccionat] +"</td>"+
+                        "<td class='capa_quantitat'>"+
+                            "<img src='up.png' alt='' class='up'><br>" +
+                            "<span class='quantitat'>1</span> <br>"+
+                            "<img src='down.png' alt='' class='down'>"+
+                        "</td>"+
+                        "<td><span class='preu'>"+ preu[prod_seleccionat]+"</span>€</td>"+
+                        "<td><span class='preu_total'></span></td>"+
+                    "</tr>"
+                    );
+                    
+                    //Puja'l a l'array de productes seleccionats: 
+
+                    
+                });
+
+
+                //Clica i pinta fila de color
+                $(document).on("click", ".check_boto", function(){
+                    //Comprova si està marcat i canvia el color
+                    if($(this).is(":checked") == true){
+                        $(this).parents("tr").addClass("marcat")
+                    }
+                    else{
+                        $(this).parents("tr").removeClass("marcat");
+                    };
+                });
+
+                //Clica selecciona totes i marca totes
+                $("#check_tots").click(function(){
+                    if($("#check_tots").is("checked") == false){
+                        $(".check_boto").prop("checked", this.checked);
+                    }
+                    console.log($("#check_tots").is("checked"))
+                    
+                })
+
+                //BOTONS
+                $(document).on("click", ".up", function(){
+                    //Pujar comptador
+                    var comptador = parseInt($(this).siblings(".quantitat").html());
+                    comptador = comptador + 1;
+                    $(this).siblings(".quantitat").html(comptador);
+                    //Calcula preu
+                    var preu = $(this).parent().parent().find(".preu").html();
+                    $(this).parent().parent().find(".preu_total").html(preu*comptador)
+                    
+                });
+
+                $(document).on("click", ".down", function(){
+                    //Baixar comptador
+                    var comptador = parseInt($(this).siblings(".quantitat").html());
+                    if(comptador > 0){
+                        comptador = comptador - 1;
+                        $(this).siblings(".quantitat").html(comptador);
+                    }
+                    //Calcula preu
+                    var preu = $(this).parent().parent().find(".preu").html();
+                    $(this).parent().parent().find(".preu_total").html(preu*comptador);
+                });
+                
+                
+
+                                
+                
+            });
+
+        </script>
+    
+    
+    
+        <!-- Optional JavaScript; choose one of the two! -->
+    
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+    </body>
+    </html>

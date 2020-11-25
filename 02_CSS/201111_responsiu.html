@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 900px;
+            height: 600px;
+            background-color: #e6ca70;
+            margin: 10px auto;
+        }
+
+        .capa{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            float: left;
+            background-color: rgb(199, 255, 167);
+            border: 1px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 900px){
+            .container{
+                width: 600px;
+            }
+            .ultima_capa{
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            .container{
+                width: 300px;
+            }
+            .ultima_capa{
+                display: block;
+            }
+           
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="capa">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, quisquam ducimus ipsa labore molestias eveniet id obcaecati atque doloremque explicabo nobis incidunt dignissimos dolorum, dolorem, quis quibusdam? Quia, quas sed.
+        </div>
+
+        <div class="capa">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo alias, quod repellendus cum molestias debitis odit magnam ad quibusdam fugit eius veritatis cumque, facere architecto id aliquam at velit numquam?
+        </div>
+
+        <div class="capa ultima_capa">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo alias, quod repellendus cum molestias debitis odit magnam ad quibusdam fugit eius veritatis cumque, facere architecto id aliquam at velit numquam?
+        </div>
+
+        
+
+    </div>
+</body>
+</html>

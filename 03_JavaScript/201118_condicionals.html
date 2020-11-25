@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function comprovar(){
+            var contrasenya = document.getElementById("camp_password");
+            
+            if(contrasenya.value == "patata"){
+                alert("Contrasenya correcta")
+            }
+            else{
+                alert("Contrasenya incorrecte")
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="password">Password: </label>
+    <input type="password" name="passowrd" id="camp_password">
+    <br>
+    <input type="button" value="COMPROVAR" id="boto_comprovar" onclick="comprovar()">
+</body>
+</html>

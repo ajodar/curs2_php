@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function comprovar(){
+            var temperatura = document.getElementById("temperatura");
+
+            //ELSE IF
+            if(temperatura.value >=25){
+                alert("Fa calor");
+            }
+            
+            else if(temperatura.value >=15){
+                alert("Agradable");
+            }
+
+            else if (temperatura.value >=8){
+                alert("Fresqueta")
+            }
+
+            else{
+                alert("Fa fred")
+            }            
+            
+            
+            //IF'S ANIDATS
+            // if(temperatura.value >= 25){
+            //     alert("Fa calor");
+            // }
+            
+            // else{
+            //     if(temperatura.value >= 15){
+            //         alert("Agradable")
+            //     }
+            //     else{
+            //         if(temperatura.value >=8){
+            //             alert("Fresqueta")
+            //         }
+            //         else{
+            //             alert("Fa fred")
+            //         }
+            //     }
+            // }
+        }
+    </script>
+</head>
+<body>
+    <label for="temperatura">Temperatura: </label>
+    <input type="number" name="temperatura" id="temperatura">
+
+    <input type="button" value="COMPROVAR" onclick="comprovar()">
+</body>
+</html>

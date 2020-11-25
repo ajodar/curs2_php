@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function accedir(){
+            var rol = document.getElementById("rols");
+            
+           switch (rol.value){
+                case "1": 
+                    console.log("Accès total");
+                    break;
+                case "2":
+                    console.log("Accès limitat");
+                    break;
+                case "3":
+                    console.log("Accès de lectura");
+                    break;
+                default:       
+                    console.log("Cal escollir una opció vàlida");
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="rols">ROL: </label>
+    <select name="rol" id="rols">
+        <option value="0">Escull una opció</option>
+        <option value="1">Administrador</option>
+        <option value="2">Gestor</option>
+        <option value="3">Auxiliar</option>
+    </select>
+    <input type="button" value="ACCEDIR" onclick="accedir()">
+</body>
+</html>

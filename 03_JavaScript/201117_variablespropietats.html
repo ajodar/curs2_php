@@ -1,0 +1,27 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script language="javascript">
+        function saludar(){
+            var nom = "";
+            nom = document.getElementById("text_nom");
+            alert("Bon dia " + nom.value + " benvinguda");
+            // var text_nom = document.getElementById("text_nom").value;
+            // alert("Bon dia " + text_nom);
+        }
+    </script>
+</head>
+<body>
+    <h1>VARIABLES I PROPIETATS JS</h1>
+    <form action="">
+        <label for="text_nom">NOM:</label>
+        <input type="text" name="Nom" id="text_nom">
+
+        <input type="button" value="SALUDAR" onclick="saludar()">
+    </form>
+</body>
+</html>

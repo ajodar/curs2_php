@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a{
+            color: black;
+            /* La transició va sempre a l'etiqueta principal */
+            transition: color 2s;
+            
+        }
+
+        a:hover{
+            color: red;
+        }
+
+        .capa1{
+            width: 400px;
+            height: 300px;
+            background-color: rgb(114, 250, 143);
+            transition: height 1s ease-in 1s, width 1s linear, background-color 2s linear 3s; 
+        }
+
+        .capa1:hover{
+            height: 500px;
+            width: 500px;
+            background-color: slateblue;
+        }
+    </style>
+</head>
+<body>
+    <a href="">ENLLAÇ</a>
+    <br>
+    <div class="capa1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum adipisci enim dolor qui iusto delectus ducimus illo temporibus, nihil possimus nesciunt recusandae. Omnis ipsam itaque possimus aliquam harum sunt. Fugit?</p>
+    </div>
+</body>
+</html>

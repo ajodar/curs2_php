@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saludar(){
+            var d = new Date;
+            var hora = d.getHours()
+
+
+            if((hora >=13) && (hora<=20)){
+                alert("Bona tarda");
+            }
+            else{
+                if((hora > 20) || (hora < 7)){
+                    alert("Bona nit");
+                }
+                else{
+                    alert("Bon dia");
+                }
+            }
+                        
+            console.log(hora)
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="SALUDA" onclick="saludar()">
+
+</body>
+</html>

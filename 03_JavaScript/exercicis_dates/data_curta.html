@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function mostrarData(){
+            var d = new Date(); 
+            var dia_set = d.getDay();
+            var dia_num = d.getDate();
+            var mes = d.getMonth();
+            var any = d.getFullYear();
+            var hora = d.getHours();
+            var minuts = d.getMinutes();
+            var segons = d.getSeconds();
+            alert(dia_num + "/" + (mes + 1) +"/"+ any + " " + hora + ":" + minuts + ":" + segons)
+            alert("Avui som " + dia_set + " , " + dia_num + " de " + (mes+1) + " de " + any + ". Ara són les " + hora + " hores, " + minuts + " minuts i " + segons + " segons.")
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="MOSTRAR DATA" onclick="mostrarData()">
+</body>
+</html>

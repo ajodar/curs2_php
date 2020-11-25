@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function mostrar(){
+
+            //Variables: 
+            var d= new Date; 
+            var mes = d.getMonth();
+            var dia = d.getDate();
+            var titol = document.getElementById("titol")
+            var fons = document.getElementById("fons")
+            console.log(mes + " " + dia)
+
+
+            //Condicionals
+            //Tardor
+            if((mes==9) || (mes==10) || ((mes==8)&&(dia>21)) || ((mes==11)&&(dia<=21))){
+                titol.style.color = "#FC7765"
+                fons.style.backgroundColor = "#DECD62"
+            }
+            //Hivern
+            else if((mes==0) || (mes==1) || ((mes==11)&&(dia>=21)) || ((mes==2)&&(dia<=21))){
+                titol.style.color = "#237FF8"
+                fons.style.backgroundColor = "#D7B5F0"
+            }
+            //Primavera
+            else if((mes==3) || (mes==4) || ((mes==2)&&(dia>=21)) || ((mes==5)&&(dia<=21))){
+                titol.style.color = "#23DE74"
+                fons.style.backgroundColor = "#FCD91E"
+            }
+            //Estiu
+            else if( (mes==6) ||(mes==7) || ((mes==5)&&(dia>=21)) || ((mes==8)&&(dia<=21))){
+                titol.style.color = "#EFFC4E"
+                fons.style.backgroundColor = "#B5F0F5"
+            }
+
+        }
+    </script>
+</head>
+<body id="fons">
+    
+    <input type="button" value="COMPROVA" onclick="mostrar()">
+
+    <h1 id="titol">Estació de l'any</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id molestias vero eum minima. Aut esse dolorem sint corrupti earum dignissimos qui minima numquam animi eligendi, labore libero pariatur quae doloribus.</p>
+    
+</body>
+</html>

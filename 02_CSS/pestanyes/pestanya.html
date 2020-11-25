@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            margin: 0;
+        }
+
+        
+        #container{
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        img{
+            width: 30px;
+        }
+
+        .capa_img{
+            width: 30px;
+            margin: 0 auto;
+        }
+
+
+        .pestanya{
+            width: 200px;
+            background-color: springgreen;
+            text-align: center;
+            border-radius: 0px 0px 10px 10px;
+            float: left;
+            position: relative;
+            top: -40px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 25px;
+            padding-top: 2px;
+            transition: top 0.5s ease-in ;
+        }
+
+
+
+        .pestanya:hover{
+            top: 0px;
+        }
+
+        #container_d{
+            background-color: rgb(0, 255, 42);
+            float: right;
+            
+        }
+
+        .pestanya_d{
+            width: 100px;
+            background-color: aqua;    
+            text-align: center;    
+            border-radius: 10px 0px 0px 10px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            margin:0px;
+            position: relative;
+            left: 40px;
+            font-size: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .pestanya_d:hover{
+            left: 0px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+    
+        <div class="pestanya" id="capa1">
+            <div class="capa_img"><img src="twitter.png" alt="Logo de twitter"></div>
+            
+            <p>TWITTER</p>
+        </div>
+
+        <div class="pestanya" id="capa2">
+            <div class="capa_img"><img src="facebook.png" alt="Logo de facebook"></div>
+            
+            <p>FACEBOOK</p>
+        </div>
+
+        <div class="pestanya" id="capa3">
+            <div class="capa_img"><img src="instagram.png" alt="Logo de instagram"></div>
+            
+            <p>INSTAGRAM</p>
+        </div>
+    </div>
+
+    <div id="container_d">
+        <div class="pestanya_d">
+            <div class="capa_img"><img src="twitter.png" alt="Logo de twitter"></div>
+
+            <p>TWITTER</p>
+        </div>
+
+        <div class="pestanya_d">
+            <div class="capa_img"><img src="facebook.png" alt="Logo de facebook"></div>
+            
+            <p>FACEBOOK</p>
+        </div>
+
+        <div class="pestanya_d">
+            <div class="capa_img"><img src="instagram.png" alt="Logo de instagram"></div>
+            
+            <p>INSTAGRAM</p>
+        </div>
+    </div>
+</body>
+</html>

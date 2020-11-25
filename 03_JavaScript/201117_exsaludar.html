@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saludar(){
+            var nom = "";
+            var cognom = "";
+            var poblacio = "";
+
+            nom = document.getElementById("text_nom");
+            cognom = document.getElementById("text_cognom");
+            poblacio = document.getElementById("text_poblacio");
+
+            alert("Hola " + nom.value + " " + cognom.value + " de " + poblacio.value + ". Benvingut/da a la meva plana web!")
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Funcions JS - Saludar</h1>
+
+    <!-- Camps de formulari -->
+
+    <!-- Nom -->
+    <label for="text_nom">Nom:</label>
+    <input type="text" name="nom" id="text_nom">
+    <br><br>
+    <!-- Cognom -->
+    <label for="text_cognom">Cognom:</label>
+    <input type="text" name="cognom" id="text_cognom">
+    <br><br>
+    <!-- Població -->
+    <label for="text_poblacio">Població:</label>
+    <input type="text" name="poblacio" id="text_poblacio">
+    <br><br>
+
+    <!-- Botó -->
+    <input type="button" value="SALUDA" onclick="saludar()">
+
+</body>
+</html>

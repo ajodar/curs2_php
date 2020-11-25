@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function comprovar(){
+            var edat = document.getElementById("edat");
+            if( (edat.value >= 18) && (edat.value <= 30)){
+                alert("Acceptat")
+            }
+            else{
+                alert("Rebutjat")
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+    <label for="edat">EDAT: </label>
+    <input type="text" name="edat" id="edat">
+    <input type="button" value="COMPROVAR" onclick="comprovar()">
+
+</body>
+</html>

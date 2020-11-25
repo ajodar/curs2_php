@@ -1,0 +1,33 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function pintar(){
+            var paragrafs = document.getElementsByTagName("p")
+            var i=0; 
+
+            for(i=0;i<paragrafs.length; i++){
+                paragrafs[i].style.color = "red",
+                console.log(paragrafs)
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ducimus quae nam repellat odit sint placeat neque qui beatae dolore ad pariatur voluptatibus velit illo possimus tempore, id esse harum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolor qui exercitationem at eveniet aperiam aliquid et voluptas commodi cumque, molestiae, omnis, labore fugiat mollitia neque enim ea ab hic.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam omnis quibusdam sunt placeat ratione veritatis aliquam aliquid dignissimos, quis ut, ea id eveniet officia accusantium earum, animi eius sint dolores.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi ullam qui illum? Sint officia distinctio, cumque ab voluptatem, sapiente delectus modi laudantium ducimus similique quasi esse, aliquam itaque fugit?</p>
+
+    <input type="button" value="PINTAR" onclick="pintar()">
+</body>
+</html>

@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta name="title" content="Exercici d'HTML (taules, enllaços, llistes i formularis">
+    <meta name="author" content="Anna Jòdar Portas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici CSS basic | Anna Jòdar</title>
+
+    <style type="text/css">
+        h1, h2, b, i, li ul, td:last-child, label + input, p a:first-child{
+            color: red;
+        }
+
+        td:first-child, form{
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Imatge -->
+    <img src="logo.png" alt="Logotip Girl Develop It" height="80">
+
+    <!--APARTAT 1: About -->
+    <h1>About</h1>
+    <p>It can be intimidating for women to learn and ask questions when they are in an <b>extreme minority</b>. While open and welcoming, today's budding developer community is up to <b> 91% male</b>. If we can empower ore famales with the confidence in their technological capabilites <i>we can begin to change this landscape.</i> </p>
+
+    <!-- APARTAT 2: Our locations -->
+    <h2>Our Locations</h2>
+    <ul>
+        <li>USA
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/New_York_City" target="_blank">New York</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Columbus,_Ohio">Columbus</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Austin,_Texas" target="_blank">Austin</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Philadelphia" target="_blank">Philly</a></li>
+            </ul>
+        </li>
+        <li>World
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Ottawa" target="_blank">Ottawa</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Sydney" target="_blank">Sydney</a></li>
+            </ul>
+
+        </li>
+    </ul>
+
+    <!-- APARTAT 3: Upcoming classes -->
+    <h2>Upcoming Classes</h2>
+    <table border="1">
+        <tr>
+            <th>Location</th>
+            <th>Topic</th>
+        </tr>
+        <tr>
+            <td>New York</td>
+            <td>JavaScript & jQuery</td>
+        </tr>
+        <tr>
+            <td>San Francisco</td>
+            <td>HTML & CSS</td>
+        </tr>
+    </table>
+    
+    <!-- APARTAT 4: SignUp! -->
+    
+    <h2>Sign Up!</h2>
+    <form action="text/plain" method="get">
+        <label for="text_name">Name:</label>
+        <input type="text" name="name" id="text_name" size="13">
+
+        <br>
+
+        <label for="text_email">Email:</label>
+        <input type="text" name="email" id="text_email" size="13">
+
+        <br>
+
+        <label for="escull_location">Location:</label>
+        <select name="location" id="escull_location">
+            <option value="SanFrancisco">San Francisco</option>
+            <option value="NewYork">New York</option>
+        </select>
+
+        <br>
+
+        <fieldset>
+            <legend>Gender</legend>
+
+            <label for="camp_female">Female</label>
+            <input type="radio" name="gender" id="camp_female" value="female">
+            
+            <label for="camp_male">Male</label>
+            <input type="radio" name="gender" id="camp_male" value="male">
+        </fieldset>
+
+        <br>
+
+        <label for="text_experience">Experience:</label> <br>
+        <textarea name="experience" id="text_experience"></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <br>
+    <p>
+        <a target="_blank" href="https://twitter.com/" >Twitter</a> | <a target="_blank" href="https://www.facebook.com/">Facebook</a> | <a target="_blank" href="https://www.flickr.com/">Flickr</a>
+
+    </p>
+
+
+</body>
+</html>
