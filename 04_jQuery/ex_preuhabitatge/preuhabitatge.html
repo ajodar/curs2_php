@@ -1,0 +1,144 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Slider - Range slider</title>
+  <!-- jQuery + jQuery UI -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  
+
+  <style>
+        h1{
+            font-size: 30px;
+            margin-top: 20px;
+        }
+        /* Buscador */
+        .buscador input{
+            margin: 15px 0px;
+        }
+        #amount{
+            font-size: 25px;
+        }
+        #slider-range{
+            width: 80%;
+            max-width: 250px;
+        }
+
+        /* Resultats */
+        .capa_resultats{
+            padding: 10px;
+        }
+        .container_resultat{
+            margin-bottom: 10px;
+        }
+        .resultat{
+            border: 1px solid black;
+            padding: 10px;
+            line-height: 200%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .titol_comarca{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <!-- Títol -->
+        <div class="row">
+            <div class="col">
+                <h1>Preu mitjà del lloguer d'habitatges</h1>
+            </div>
+        </div>
+        <!-- Buscador -->
+        <div class="row">
+            <div class="col buscador">
+                <p>
+                    <label for="amount"></label>
+                    <input type="text" id="amount" readonly style="border:0; color:#1bda0a; font-weight:bold;">
+                </p>
+                    
+                <div id="slider-range"></div>
+
+                <input type="button" value="Buscar" id="boto_buscar">
+
+            </div>
+        </div>
+
+        <!-- Resultats -->
+        <div class="row capa_resultats" id="capa_resultats">
+            <!-- CRIDA API (Apareixen capes resultat) -->
+        </div>
+    </div>
+
+    
+    
+    <script>
+
+        $( function() {
+
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [ 400, 500 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val(  ui.values[ 0 ] + "€ - " + ui.values[ 1 ] + "€");
+                }
+                
+            });
+
+            $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+            "€ - " + $( "#slider-range" ).slider( "values", 1 ) + "€");
+
+            
+            
+
+
+            $("#boto_buscar").click(function(){
+                var slider_min = $( "#slider-range" ).slider( "values", 0 )
+                var slider_max = $( "#slider-range" ).slider( "values", 1 )
+                $.get("https://analisi.transparenciacatalunya.cat/resource/hepw-33ik.json?$where=renda between '"+ slider_min +"' and '"+ slider_max+"'", function(data, status){
+                    var capa_resultat = $("#capa_resultats")
+                    var comarques = data;
+                    var comarca = "";
+
+                    // Elimina contingut
+                    capa_resultat.empty();
+                    // Agefeix contingut
+                    for(i=0; i<comarques.length; i++){
+                        comarca = data[i];
+                        capa_resultat.append(
+                            "<div class='col-12 col-sm-6 col-md-3 container_resultat'>" +
+                                "<div class='col-12 resultat'>"+
+                                    "<span class='titol_comarca'>" + comarca.nom_territori + " (" + comarca.any + ")</span><br>" +
+                                    "<span class='preu_lloguer'>" + (Math.round(comarca.renda *100)/100) + "€</span>" +
+                                "</div>" +
+                            "</div>"
+                        )
+
+                    }
+
+                })
+            })
+            
+            
+
+          
+        } );
+        </script>
+ 
+ 
+</body>
+</html>

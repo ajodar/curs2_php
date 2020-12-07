@@ -97,7 +97,6 @@
 
                 productes = ["Macarrons", "Spaguettis", "Amanida"];
                 preu = ["8", "10", "12"];
-                productes_afegits = []; 
                 
 
                 //BOTO AFEGIR
@@ -119,8 +118,25 @@
                     "</tr>"
                     );
                     
-                    //Puja'l a l'array de productes seleccionats: 
+                    //Puja'l a l'array de productes seleccionats:
+                    console.log(prod_seleccionat)
+                    var producte = "";
 
+                    productes_afegits = []; 
+
+
+                    for(i=0;i<productes_afegits.length;i++){
+                        productes_afegits.push(prod_seleccionat);
+
+                        producte = productes_afegits[i];
+                        if(prod_seleccionat == producte){
+                            alert("Prod ja afegit")
+                        } 
+
+                        
+                    }
+                    console.log(prod_seleccionat)
+                    console.log(producte)
                     
                 });
 
