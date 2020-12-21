@@ -17,8 +17,32 @@
     <style>
         body{
             font-family: 'Ubuntu', sans-serif;
-
+            background-image: url("basket.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: black;
         }
+        h1{
+            text-align: center;
+            font-size: 30px;
+        }
+        .esportista{
+            background-color: #FA8320 ;
+            max-width: 400px;
+            font-weight: 600;
+            margin-top: 25px ;
+        }
+        .foto{
+            text-align: center;
+        }
+        #boto{
+            margin: 20 auto;
+            display: block;
+        }
+        .disciplina{
+            max-width: 152px;
+        }
+        
     </style>
 
 
@@ -26,86 +50,87 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row float-right">
+            <div class="col esportista ">
             <h1>ALTA D'ESPORTISTES</h1>
                 
                 <form action="avancat_resultat.php" method="post" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="nom">Nom</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="nom" id="nom">
+                            <input type="text" name="nom" id="nom" required>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="cognoms">Cognoms</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="cognoms" id="cognoms"> <br>
+                            <input type="text" name="cognoms" id="cognoms" required> <br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="adreca">Adreça</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="adreca" id="adreca"> <br>
+                            <input type="text" name="adreca" id="adreca" required> <br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="telefon">Telèfon</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="telefon" id="telefon"> <br>
+                            <input type="text" name="telefon" id="telefon" required> <br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="email">Email</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="email" id="email"> <br>
+                            <input type="text" name="email" id="email" required> <br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                             <label for="edat">Edat</label>
                         </div>
                         <div class="col">
-                            <input type="text" name="edat" id="edat"> <br>
+                            <input type="text" name="edat" id="edat" required> <br>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-1">
+                    <div class="row ">
+                        <div class="col disciplina">
                             <label for="disciplina">Disciplina</label>
                         </div>
-                        <div class="col">
+                        <div class="col ">
                             <select name="disciplina" id="disciplina">
-                                <option value="3x3">3x3</option>
                                 <option value="5x5">5x5</option>
-                            </select> <br>
+                                <option value="3x3">3x3</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-1">
+                    <div class="row foto">
+                        <div class="col ">
                             <label for="foto">Fotografia</label>
                         </div>
                         <div class="col">
-                            <input type="file" name="foto" id="foto"> <br>
+                            <input type="file" name="foto" id="foto" required> <br>
                         </div>
                     </div>
 
 
-                    <input type="submit" value="ENVIAR">
+                    <input type="submit" value="ENVIAR" id="boto" class="btn btn-light">
 
                 </form>
             </div>
         </div>
     </div>
+
     
 </body>
 </html>

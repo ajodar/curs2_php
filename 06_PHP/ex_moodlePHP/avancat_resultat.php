@@ -18,6 +18,17 @@
         body{
             text-align: center;
             font-family: 'Ubuntu', sans-serif;
+            background-image: url("basket.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: black;
+        }
+        .container{
+            background-color: white;
+            margin-top: 60px;
+            border: 10px solid #FA8320;
+            max-width: 600px;
+            margin-right: 20px;
         }
         .titol{
             margin: 20px;
@@ -28,7 +39,7 @@
         }
         #foto img{
             max-height: 280px;
-            max-width: 380px;
+            max-width: 330px;
             
         }
         .esportista{
@@ -117,14 +128,14 @@
         } else{
             "Càrrega de fotografia incorrecte";
         }
-
+        
+        //Crea esportista: 
         $esportista_nou = new Esportista($_POST["nom"], $_POST["cognoms"], $_POST["adreca"], $_POST["telefon"], $_POST["email"], $_POST["edat"], $_POST["disciplina"], $nomarxiu); 
         
-
         ?>
 
-
-        <div class="container">
+        <!-- Crea contingut de la pàgina -->
+        <div class="container float-right">
             <div class="row">
                 <div class="col titol">
                     <h1>FITXA DE L'ESPORTISTA</h1>
