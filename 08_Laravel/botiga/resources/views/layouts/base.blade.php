@@ -105,6 +105,7 @@
 
         @include('partials.menu_frontend')
 
+
         <h1>@yield('titol')</h1>
 
         <div class="content">

@@ -23,6 +23,13 @@ Route::prefix('empresa')->group(function(){
     Route::get('filosofia', 'FrontendController@filosofia')->name('filosofia');
     Route::get('sostenibilitat', 'FrontendController@sostenibilitat')->name('sostenibilitat');
     Route::get('equip', 'FrontendController@equip')->name('equip');
-    Route::get('contacte', 'FrontendController@contacte')->name('contacte'); 
+    Route::get('contacte', 'FrontendController@contacte')->name('contacte');
+
+    // Alimentació
+    Route::get('alimentacio', 'FrontendController@alimentacio')->name('alimentacio');
 
 });
+
+Route::get('categories/{id}','FrontendController@categoria')->name('categoria');
+Route::get('products/{id}','FrontendController@product')->name('product');
+
