@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // $this->call(CategorySeeder::class);
+
+        // Puc afegir-ne d'altres... així no he de fer php artisan db::seed--class=CategorySeeder
+        // $this->call(CountrySeeder::class);
+        // $this->call(ShopsSeeder::class);
     }
 }
