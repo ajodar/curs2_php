@@ -15,17 +15,20 @@
             {{$categoria->description}}
         </div>
 
-        @if ($categoria->id === 1)
+        {{-- DE FORMA ESTÀTICA/A SOTA DINÀMICA --}}
+        {{-- @if ($categoria->id == 1)
             <a href="{{ route('product', ['id'=>1]) }}">Anxoves de Roses</a><br>
             <a href="{{ route('product', ['id'=>2]) }}">Fesols de Santa Pau</a><br>
             <a href="{{ route('product', ['id'=>3]) }}">Arròs bomba Terres de l'Ebre</a><br>
-        @elseif ($categoria->id === 2)
+        @elseif ($categoria->id == 2)
             <a href="{{ route('product', ['id'=>4]) }}">Anhel d'Empordà</a><br>
             <a href="{{ route('product', ['id'=>5]) }}">Ratafia</a><br>
             <a href="{{ route('product', ['id'=>6]) }}">Vi blanc de Peralada</a>
-        @endif
+        @endif --}}
 
-
+        @foreach($categoria->products as $producte)
+            <p><a href="{{route('product', ['id'=>$producte->id])}}">{{$producte->name}}</a></p>
+        @endforeach
 
 
 

@@ -25,11 +25,36 @@ Route::prefix('empresa')->group(function(){
     Route::get('equip', 'FrontendController@equip')->name('equip');
     Route::get('contacte', 'FrontendController@contacte')->name('contacte');
 
-    // Alimentació
-    Route::get('alimentacio', 'FrontendController@alimentacio')->name('alimentacio');
+
 
 });
 
+// Categories
+Route::get('categories', 'FrontendController@categories')->name('categories');
 Route::get('categories/{id}','FrontendController@categoria')->name('categoria');
+
+//Productes
+Route::get('productes', 'FrontendController@productes')->name('productes');
+Route::get('products/search', 'FrontendController@productSearch')->name('product_search');
+Route::post('products/resultSearch', 'FrontendController@productResultSearch')->name('product_result_search');
 Route::get('products/{id}','FrontendController@product')->name('product');
+
+//Botigues
+Route::get('botigues', 'FrontendController@botigues')->name('botigues');
+Route::get('botigues/search', 'FrontendController@botigaSearch')->name('botiga_search');
+Route::post('botigues/result_search', 'FrontendController@botigaResultSearch')->name('botiga_result_search');
+Route::get('botigues/{id}', 'FrontendController@botiga')->name('botiga');
+
+
+//Routes admin
+Route::prefix('admin')->group(function(){
+    Route::get('categories/{category}/restore', 'CategoriesController@restore')->name('categories.restore');
+    Route::resource('categories', 'CategoriesController');
+
+    Route::get('shops/{shop}/restore','ShopsController@restore')->name('shops.restore');
+    Route::resource('shops', 'ShopsController');
+
+    Route::resource('employees', 'EmployeesController');
+
+});
 

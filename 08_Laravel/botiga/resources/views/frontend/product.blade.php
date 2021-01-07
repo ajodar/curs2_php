@@ -8,12 +8,20 @@
 
     <div class="content">
         <div class="title m-b-md">
-            {{$product->name}}
+            @if($product)
+                {{$product->name}}
+            @else
+                El producte no existeix
+            @endif
         </div>
 
-        <div class="text">
-            {{$product->description}}
-        </div>
+        @if($product)
+            <div class="text">
+                {{$product->description}}
+
+            </div>
+            <p> Preu de venda: {{ $product->price }}</p>
+        @endif
 
     </div>
 
