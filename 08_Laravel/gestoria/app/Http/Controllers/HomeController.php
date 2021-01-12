@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +24,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $product = Product::find(1);
+        return view('home')
+            ->with('product', $product);
+    }
+
+    public function crearProducte(){
+        $product = new Product;
+
+        $product->category_id = 1;
+        $product->price = 10.50;
+        $product->image = 'producte1.jpg';
+
+        $product->{'name:es'} = "Naranjas de Valencia";
+        $product->{'description:es'} = "Las mejores naranjas del mundo";
+
+        $product->{'name:en'} = "Valencian orange";
+        $product->{'description:en'} = "World best oranges";
+
+
+        $product->save();
     }
 }

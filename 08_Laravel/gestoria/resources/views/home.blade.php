@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ trans('web.hello_user', ['name'=> Auth::user()->name]) }}
+
+                    <br>
+                    {{$product->id}} <br>
+                    {{$product->name}} <br>
+                    {{$product->description}} <br>
+                    {{$product->price}} <br>
+                    {{$product->image}} <br>
+
                 </div>
             </div>
         </div>
